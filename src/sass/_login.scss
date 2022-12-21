@@ -1,0 +1,10 @@
+.login {
+    &--btn {
+        background-color: $go;
+        color: $secundary;
+        font-weight: 900;
+        font-size: 48px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
