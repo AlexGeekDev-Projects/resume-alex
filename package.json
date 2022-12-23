@@ -15,7 +15,6 @@
     "firebase": "^9.15.0",
     "firebase-tools": "^11.17.0",
     "react": "^18.2.0",
-    "react-animated-progress-bar": "^1.1.2",
     "react-bootstrap": "^2.7.0",
     "react-countup": "^6.4.0",
     "react-dom": "^18.2.0",
@@ -25,6 +24,7 @@
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-viewer": "^3.2.2",
     "sass": "^1.56.2",
     "sweetalert2": "^11.6.15",
     "web-vitals": "^2.1.4"

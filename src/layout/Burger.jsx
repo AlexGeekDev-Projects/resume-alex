@@ -3,12 +3,13 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import logo from "../assets/logo/logoOnecolor.png";
-import { useAdminContext, useUiContext } from "../context";
+import { useUserContext, useUiContext } from "../context";
 import useLogout from "../hooks/useLogout";
+import routes from "../routes/routes";
 
 const Burger = () => {
   const [open, setOpen] = useState(false);
-  const { adminDb } = useAdminContext();
+  const { userDb } = useUserContext();
   const { active } = useUiContext();
   const { logout } = useLogout();
   const ref = useRef(null);
@@ -54,7 +55,7 @@ const Burger = () => {
         <Container className="text-center burgerMenu">
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-8 burgerMenu--nav mb-3 mt-3">
-              <Link to="/">
+              <Link to={routes.home}>
                 <Image
                   onClick={() => {
                     if (open === true) {
@@ -76,21 +77,21 @@ const Burger = () => {
             <Fragment>
               <Row className="align-items-center mb-2">
                 <Col className="col-xs-1-12 col-lg-8 burgerMenu--nav">
-                  <Link to="/">
-                    <img className="navbar--photo" src={adminDb.photo} alt="logo janz" />
+                  <Link to={routes.home}>
+                    <img className="navbar--photo" src={userDb.photo} alt="logo janz" />
                   </Link>
                 </Col>
               </Row>
               <Row className="align-items-center mb-2">
                 <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav ">
-                  <span className="font-weight-light">{adminDb.name.split(" ", 1)}</span>
+                  <span className="font-weight-light">{userDb.name.split(" ", 1)}</span>
                 </Col>
               </Row>
             </Fragment>
           )}
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav ">
-              <Link to="/">
+              <Link to={routes.home}>
                 <span
                   onClick={() => {
                     if (open === true) {
@@ -110,7 +111,7 @@ const Burger = () => {
           </Row>
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-              <Link to="/Awards">
+              <Link to={routes.awards}>
                 <span
                   onClick={() => {
                     if (open === true) {
@@ -130,7 +131,7 @@ const Burger = () => {
           </Row>
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-              <Link to="/Portfolio">
+              <Link to={routes.potfolio}>
                 <span
                   onClick={() => {
                     if (open === true) {
@@ -150,7 +151,7 @@ const Burger = () => {
           </Row>
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-              <Link to="/Blog">
+              <Link to={routes.blog}>
                 <span
                   onClick={() => {
                     if (open === true) {
@@ -171,7 +172,7 @@ const Burger = () => {
           {!active ? (
             <Row className="align-items-center mb-2">
               <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-                <Link to="/Login">
+                <Link to={routes.login}>
                   <span
                     onClick={() => {
                       if (open === true) {
@@ -192,7 +193,7 @@ const Burger = () => {
           ) : (
             <Row className="align-items-center mb-2">
               <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-                <Link to="/Login">
+                <Link to={routes.login}>
                   <span
                     onClick={() => {
                       if (open === true) {

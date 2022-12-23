@@ -15,8 +15,7 @@ const useUploadImage = () => {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setPercent(Math.trunc(progress));
         switch (snapshot.state) {
           case "paused":
@@ -41,7 +40,40 @@ const useUploadImage = () => {
       }
     );
   };
-  return { uploadImage, percent, state };
+
+  const uploadAward = (path, image, nameDb, id) => {
+    const storageRef = ref(storage, path);
+    const uploadTask = uploadBytesResumable(storageRef, image);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setPercent(Math.trunc(progress));
+        switch (snapshot.state) {
+          case "paused":
+            setState("Upload is paused");
+            break;
+          case "running":
+            setState("Upload is running");
+            break;
+          default:
+        }
+      },
+      (error) => {
+        Swal.fire("Error!", `${error}`, "error");
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+          const userRef = doc(db, nameDb, id);
+          await updateDoc(userRef, {
+            url: downloadURL,
+          });
+        });
+      }
+    );
+  };
+  return { uploadImage, uploadAward, percent, state };
 };
 
 export default useUploadImage;
