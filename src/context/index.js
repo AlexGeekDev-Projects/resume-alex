@@ -1,2 +1,2 @@
-export * from "./adminContext";
+export * from "./userContext";
 export * from "./uiContext";

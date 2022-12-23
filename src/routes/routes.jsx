@@ -1,14 +1,12 @@
 const routes = {
-  dashboard: "/dashboard",
+  awards: "/awards",
+  blog: "/blog",
+  gallery: "/gallery",
   home: "/",
-  hotels: "/hotels",
+  home: "/",
   login: "/login",
-  stadistics: "/statistics",
-  users: "/users",
-  register: "register",
-  profile: "/profile",
-  packages: "/packages",
-  createHotels: "/createHotels",
+  potfolio: "/potfolio",
+  register: "/register",
 };
 
 export default routes;

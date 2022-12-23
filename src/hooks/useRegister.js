@@ -17,17 +17,18 @@ const useRegister = () => {
           const userRef = doc(db, nameDb, user.email);
 
           const data = {
+            available: false,
             date: new Date().getTime(),
             email: user.email,
             isAnonymous: user.isAnonymous,
+            lastLogOut: new Date().getTime(),
             lastLogin: new Date().getTime(),
             logins: 1,
             name: values.name,
-            phone: values.phone,
-            provider: "e-mail",
-            role: "Admin",
+            nickname: "",
+            provider: "Email",
+            role: "User",
             uid: user.uid,
-            userName: values.userName,
             verified: user.emailVerified,
           };
 

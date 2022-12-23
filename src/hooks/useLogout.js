@@ -1,16 +1,15 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../databases/firebase";
 import Swal from "sweetalert2";
-import { useAdminContext } from "../context/adminContext";
-import { useUiContext } from "../context/uiContext";
+import { useUserContext, useUiContext } from "../context";
 
 const useLogout = () => {
-  const { setAdminDb } = useAdminContext();
+  const { setUserDb } = useUserContext();
   const { setActive } = useUiContext();
   const logout = () => {
     signOut(auth)
       .then(() => {
-        setAdminDb();
+        setUserDb();
         setActive(false);
         Swal.fire("Hasta luego", "Esperamos regreses pronto", "success");
       })
