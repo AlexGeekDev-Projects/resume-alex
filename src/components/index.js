@@ -5,3 +5,4 @@ export * from "./NewAward";
 export * from "./SkillCarousel";
 export * from "./Video";
 export * from "./YouTube";
+export * from "./NewProject";

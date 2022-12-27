@@ -9,23 +9,24 @@ import { faSass } from "@fortawesome/free-brands-svg-icons";
 import { faBootstrap } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faPython } from "@fortawesome/free-brands-svg-icons";
-import { faNodeJs } from "@fortawesome/free-brands-svg-icons";
+import { faNode } from "@fortawesome/free-brands-svg-icons";
+import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
 
 export const AboutMe = () => {
   return (
     <Container fluid className="px-4 hero">
       <Row className="justify-content-center align-middle text-center">
-        <Col className="col-xs-1-12 col-lg-3 pt-5">
-          <Image src={logo} alt="Alex Zepeda" className="img-fluid pt-5" />
+        <Col lg={4} xs={12} className=" pt-5">
+          <Image src={logo} alt="Alex Welsh" className="img-fluid pt-5" />
         </Col>
-        <Col className="col-xs-1-12 col-lg-6 text-justify my-4 pt-5">
-          <h1 className="text-white">Alex Zepeda</h1>
+        <Col lg={4} xs={12} className=" text-justify my-4 pt-5">
+          <h1 className="text-white">Alex Welsh</h1>
           <h2 className="text-white">
             About Me
             <FontAwesomeIcon icon={faGrav} className="hero--icons mx-2" />
-            Hi! my name is Alejandro Zepeda Alvarez, I am an engineer in computer systems, I have tried to always stay
-            at the forefront of new technologies throughout my career{" "}
+            Hi! my name is Alejandro Welsh Alvarez, I am an engineer in computer systems, I have tried to always stay at
+            the forefront of new technologies throughout my career{" "}
             <FontAwesomeIcon icon={faLaptopCode} className="hero--icons mx-2" />, through courses and certifications and
             of course putting it into practice, I like to be proactive and I consider myself self-taught definitely. I
             love this stack
@@ -34,12 +35,13 @@ export const AboutMe = () => {
             <FontAwesomeIcon icon={faSass} className="hero--icons mx-2" />
             <FontAwesomeIcon icon={faBootstrap} className="hero--icons mx-2" />
             <FontAwesomeIcon icon={faReact} className="hero--icons mx-2" />
-            <FontAwesomeIcon icon={faNodeJs} className="hero--icons mx-2" />
+            <FontAwesomeIcon icon={faJs} className="hero--icons mx-2" />
+            <FontAwesomeIcon icon={faNode} className="hero--icons mx-2" />
             <FontAwesomeIcon icon={faPython} className="hero--icons mx-2" />
           </h2>
         </Col>
-        <Col className="col-xs-1-12 col-lg-3">
-          <img src={Alex} alt="Alex Zepeda" className="img-fluid hero--photo" />
+        <Col lg={4} xs={12}>
+          <img src={Alex} alt="Alex Welsh" className="img-fluid hero--photo" />
         </Col>
       </Row>
     </Container>

@@ -2,36 +2,36 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, limit, orderBy, query, startAfter } from "@firebase/firestore";
 import { db } from "../databases/firebase";
 
-export const useFetchAwards = () => {
-  const [awards, setAwards] = useState([]);
+export const useFetchProjects = () => {
+  const [projects, setProjects] = useState([]);
   const [last, setLast] = useState();
   const [disable, setDisable] = useState(false);
-  const [totalAwards, setTotalAwards] = useState();
+  const [totalProjects, setTotalProjects] = useState();
 
   useEffect(() => {
-    getAwards();
+    getProjects();
   }, []);
 
-  const getAwards = async () => {
-    const first = query(collection(db, "awards"), orderBy("date", "desc"), limit(12));
-    let total = query(collection(db, "awards"));
+  const getProjects = async () => {
+    const first = query(collection(db, "projects"), orderBy("date", "desc"), limit(12));
+    let total = query(collection(db, "projects"));
     const totalSnap = await (await getDocs(total)).docs;
-    setTotalAwards(totalSnap.length);
+    setTotalProjects(totalSnap.length);
     const documentSnapshots = await getDocs(first);
-    let arrayAwards = [];
+    let arrayProjects = [];
 
     documentSnapshots.forEach((doc) => {
-      arrayAwards.push(doc.data());
+      arrayProjects.push(doc.data());
     });
 
-    setAwards(arrayAwards);
+    setProjects(arrayProjects);
     setLast(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
   };
 
   const getNext = async () => {
     const next = query(collection(db, "awards"), orderBy("date", "desc"), startAfter(last), limit(12));
     const documentSnapshots = await getDocs(next);
-    let arrayAwards = awards;
+    let arrayAwards = projects;
     if (documentSnapshots.docs.length < 12) {
       setDisable(true);
     }
@@ -40,9 +40,9 @@ export const useFetchAwards = () => {
       arrayAwards.push(doc.data());
     });
 
-    setAwards(arrayAwards);
+    setProjects(arrayAwards);
     setLast(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
   };
 
-  return { awards, getNext, disable, getAwards, totalAwards };
+  return { projects, getNext, disable, getProjects, totalProjects };
 };

@@ -4,9 +4,9 @@ import { useUserContext, useUiContext } from "../context";
 import { db } from "../databases/firebase";
 import useUploadImage from "./useUploadImage";
 
-export const useNewaward = () => {
+export const useNewAward = () => {
   const { userDb } = useUserContext();
-  const { uploadAward, percent, state } = useUploadImage();
+  const { uploadUrl, percent, state } = useUploadImage();
   const { setLoading } = useUiContext();
 
   const newAward = async (values, path, nameDb) => {
@@ -28,7 +28,7 @@ export const useNewaward = () => {
 
     await setDoc(awardRef, newAward)
       .then(async () => {
-        await uploadAward(path, values.photo, nameDb, awardRef.id);
+        await uploadUrl(path, values.photo, nameDb, awardRef.id);
         setLoading(false);
         Swal.fire("Congrats!", "Your award has been added!", "success");
       })

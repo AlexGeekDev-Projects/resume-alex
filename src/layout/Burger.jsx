@@ -151,7 +151,7 @@ const Burger = () => {
           </Row>
           <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
-              <Link to={routes.blog}>
+              <Link to={routes.gallery}>
                 <span
                   onClick={() => {
                     if (open === true) {
@@ -164,7 +164,7 @@ const Burger = () => {
                   }}
                   className="font-weight-light"
                 >
-                  Blog
+                  Gallery
                 </span>
               </Link>
             </Col>

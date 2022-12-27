@@ -41,7 +41,7 @@ const useUploadImage = () => {
     );
   };
 
-  const uploadAward = (path, image, nameDb, id) => {
+  const uploadUrl = (path, image, nameDb, id) => {
     const storageRef = ref(storage, path);
     const uploadTask = uploadBytesResumable(storageRef, image);
 
@@ -73,7 +73,8 @@ const useUploadImage = () => {
       }
     );
   };
-  return { uploadImage, uploadAward, percent, state };
+
+  return { uploadImage, uploadUrl, percent, state };
 };
 
 export default useUploadImage;

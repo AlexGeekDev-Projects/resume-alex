@@ -9,7 +9,7 @@ export const Footer = () => {
       <div className="row justify-content-center text-center">
         <div className="col-xs-1-12 col-lg-6 mt-2 mb-2">
           <h1>
-            Web Design by Alex Zepeda 2021 <FontAwesomeIcon icon={faCopyright} className="mx-2" />
+            Web Design by Alex Welsh 2021 <FontAwesomeIcon icon={faCopyright} className="mx-2" />
           </h1>
         </div>
         <div className="col-xs-1-12 col-lg-6">

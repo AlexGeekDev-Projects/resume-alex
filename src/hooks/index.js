@@ -1,3 +1,5 @@
 export * from "./useFetchAwards";
+export * from "./useFetchProjects";
 export * from "./useForm";
-export * from "./useNewaward";
+export * from "./useNewAward";
+export * from "./useNewProject";

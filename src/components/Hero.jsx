@@ -3,13 +3,13 @@ import HeroDesign2 from "../assets/hero/HeroDesign2.png";
 
 export const Hero = () => {
   return (
-    <Container fluid className="vh-100 heroDesign">
+    <Container fluid className=" heroDesign">
       <Row>
-        <Col className="col-xs-1-12 col-lg-6">
+        <Col xs={12} lg={6}>
           <Image fluid src={HeroDesign2} alt="Hero" className="heroDesign--img" />
         </Col>
-        <Col className="col-xs-1-12 col-lg-6 align">
-          <h1 className="text-center mt-5 mb-3">Alex Zepeda</h1>
+        <Col xs={12} lg={6}>
+          <h1 className="text-center mt-5 mb-3">Alex Welsh</h1>
           <h2 className="text-center">Developer and Designer</h2>
           <div className="sea">
             <div className="circle-wrapper">

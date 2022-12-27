@@ -1,16 +1,18 @@
-import { adobe, linkedIn, ic3, microsoft, platzi, sep } from "../assets/certificates";
+import logo from "../assets/logo/logo3.png";
+import janz from "../assets/companies/janz.png";
+import quimera from "../assets/companies/quimera.png";
 import { animateScroll as scroll } from "react-scroll";
-import { NewAward } from "../components";
+import { NewProject } from "../components";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { useFetchAwards } from "../hooks";
+import { useFetchProjects } from "../hooks";
 import Viewer from "react-viewer";
 import { useUserContext } from "../context";
 
-export const Awards = () => {
+export const Portfolio = () => {
   const { userDb } = useUserContext();
-  const { awards, getNext, disable, totalAwards } = useFetchAwards();
+  const { projects, getNext, disable, totalProjects } = useFetchProjects();
   const [visible, setVisible] = useState(false);
   const [imgV, setImgV] = useState();
 
@@ -21,16 +23,15 @@ export const Awards = () => {
   return (
     <Container className="justify-content-center text-center">
       <Row>
-        <Col className="col-xs-1-12 my-3">{userDb?.role === "Admin" && <NewAward />}</Col>
+        <Col className="col-xs-1-12 my-3">{userDb?.role === "Admin" && <NewProject />}</Col>
       </Row>
       <Row>
         <Col className="col-xs-1-12 my-3">
-          {" "}
-          <h1> {`Total awards:  ${totalAwards}`} </h1>{" "}
+          <h1> {`Total professional projects:  ${totalProjects}`} </h1>{" "}
         </Col>
       </Row>
       <Fragment>
-        {awards.map((award, index) => (
+        {projects.map((project, index) => (
           <ul key={index} className="awards mx-2">
             <Fragment>
               <div className="containerCard">
@@ -48,34 +49,30 @@ export const Awards = () => {
                       images={[{ src: `${imgV}` }]}
                     />
                     <Image
-                      src={award.url}
+                      src={project.url}
                       className="img-fluid awards--cert"
-                      style={{ maxHeight: 240 }}
                       onClick={() => {
                         setVisible(true);
-                        setImgV(award.url);
+                        setImgV(project.url);
                       }}
                     />
                   </div>
                   <div className="contentBx">
-                    <h2> {award.title} </h2>
+                    <h2> {project.title} </h2>
                     <div className="category my-2">
-                      <h3 className="mt-2">Provider :</h3>
-                      {award.provider === "Platzi" && <img src={platzi} className="containerCard--prov" />}
-                      {award.provider === "Microsoft" && <img src={microsoft} className="containerCard--prov" />}
-                      {award.provider === "LinkedIn" && <img src={linkedIn} className="containerCard--prov" />}
-                      {award.provider === "IC3" && <img src={ic3} className="containerCard--prov" />}
-                      {award.provider === "Adobe" && <img src={adobe} className="containerCard--prov" />}
-                      {award.provider === "SEP" && <img src={sep} className="containerCard--prov" />}
+                      <h3 className="mt-2">Company :</h3>
+                      {project.company === "AlexGeekDev" && <img src={logo} className="containerCard--prov" />}
+                      {project.company === "Quimera solutions" && (
+                        <a href="https://si-quimera.com.mx/" rel="noreferrer" target="_blank">
+                          <img src={quimera} className="containerCard--prov" />
+                        </a>
+                      )}
+                      {project.company === "Janz" && <img src={janz} className="containerCard--prov" />}
                     </div>
-                    <div className="category mb-2">
-                      <h3>Category :</h3>
-                      <span>{award.category} </span>
-                    </div>
-                    <a href={award.link} rel="noreferrer" target="_blank">
-                      <button className="btnMain">Validate</button>
+                    <a href={project.link} rel="noreferrer" target="_blank">
+                      <button className="btnMain">Go to project</button>
                     </a>
-                    <h2 className="mt-2">{award.body}</h2>
+                    <h2 className="mt-2">{project.body}</h2>
                   </div>
                 </div>
               </div>
