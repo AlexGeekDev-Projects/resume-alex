@@ -22,8 +22,8 @@ export const NavBar = () => {
           </Link>
           {active && (
             <Fragment>
-              <Image src={userDb.photo} alt={userDb.name} className="navbar--photo" width={50} height={50} />
               <Link>
+                {userDb.photo && <Image src={userDb.photo} className="navbar--photo" width={50} height={50} />}
                 <strong> {userDb.name.split(" ", 1)} </strong>
               </Link>
             </Fragment>

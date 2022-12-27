@@ -1,24 +1,23 @@
 import { useState, useRef } from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
-import { useUserContext } from "../context";
-import { useNewAward, useForm } from "../hooks";
+import { useNewProject, useForm } from "../hooks";
 
-export const NewAward = () => {
+export const NewProject = () => {
   const [show, setShow] = useState(false);
   const ref = useRef();
-  const { newAward } = useNewAward();
-  const { userDb } = useUserContext();
+  const { newProject } = useNewProject();
   const { handleInputChange, handleSelect, handleAddImage, values } = useForm({
     title: "",
     body: "",
     link: "",
+    nickname: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const path = `Award/${userDb.uid}/${values.title}`;
-    const nameDb = "awards";
-    await newAward(values, path, nameDb);
+    const path = `Projects/${values.title}`;
+    const nameDb = "projects";
+    await newProject(values, path, nameDb, values.nickname);
     setShow(false);
   };
 
@@ -42,14 +41,14 @@ export const NewAward = () => {
               <Col lg={6}>
                 <Form.Group>
                   <Form.Label className="text-light" style={{ fontWeight: "bolder" }}>
-                    Award Name
+                    Project Name
                   </Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="add an award name"
+                    placeholder="Add a title"
                     name="title"
                     maxLength={30}
-                    minLength={5}
+                    minLength={4}
                     className="form-control mb-1"
                     value={values.title}
                     onChange={handleInputChange}
@@ -89,49 +88,38 @@ export const NewAward = () => {
               <Col lg={6}>
                 <Form.Group controlId="custom-select">
                   <Form.Label className="text-light" style={{ fontWeight: "bolder" }}>
-                    Provider
+                    Company
                   </Form.Label>
                   <Form.Control
                     as="select"
                     className="shadow "
                     style={{ width: "100%" }}
-                    onChange={(e) => handleSelect(e, "provider")}
+                    onChange={(e) => handleSelect(e, "company")}
                   >
-                    <option value="Adobe">Adobe</option>
-                    <option value="IC3">IC3</option>
-                    <option value="Interlingua">Interlingua</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="Microsoft">Microsoft</option>
-                    <option value="Platzi">Platzi</option>
-                    <option value="SEP">SEP</option>
-                    <option value="Udemy">Udemy</option>
+                    <option value=""></option>
+                    <option value="AlexGeekDev">AlexGeekDev</option>
+                    <option value="Quimera solutions">Quimera solutions</option>
+                    <option value="Janz">Janz</option>
                   </Form.Control>
                 </Form.Group>
-
-                <Form.Group controlId="custom-select">
+                <Form.Group>
                   <Form.Label className="text-light" style={{ fontWeight: "bolder" }}>
-                    Category
+                    Nickname
                   </Form.Label>
                   <Form.Control
-                    as="select"
-                    className="shadow mb-2"
-                    style={{ width: "100%" }}
-                    onChange={(e) => handleSelect(e, "category")}
-                  >
-                    <option value="Leadership">Leadership</option>
-                    <option value="Terminal">Terminal</option>
-                    <option value="Cloud">Cloud</option>
-                    <option value="Data-Bases">Data-Bases</option>
-                    <option value="Back-End">Back-End</option>
-                    <option value="Front-End">Front-End</option>
-                    <option value="Computing">Computing</option>
-                    <option value="Design">Design</option>
-                    <option value="Languages">Languages</option>
-                  </Form.Control>
+                    type="text"
+                    placeholder="add a nickname"
+                    name="nickname"
+                    maxLength={100}
+                    minLength={4}
+                    className="form-control mb-3"
+                    value={values.nickname}
+                    onChange={handleInputChange}
+                  />
                 </Form.Group>
                 <Form.Group id="boxUpload" className="mb-3">
                   <Form.Label className="text-light" style={{ fontWeight: "bolder" }}>
-                    Award Image
+                    Project image
                   </Form.Label>
                   <Button style={{ color: "white" }} onClick={handleClckImg}>
                     Choose an image
@@ -155,7 +143,7 @@ export const NewAward = () => {
               height={200}
               style={{ borderRadius: "5%" }}
             />
-            <Button type="submit">Send Award</Button>
+            <Button type="submit">Send Project</Button>
           </Form>
         )}
       </Row>

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import Alex from "../assets/alex/AlexGeek Small.png";
+import { Breakpoint } from "./Breakpoint";
 
 export const YouTube = () => {
   return (
@@ -16,7 +17,19 @@ export const YouTube = () => {
             target="_blank"
           >
             <strong className="youtube--text">
-              Follow me in my Youtube Channel <FontAwesomeIcon icon={faYoutube} className="youtube--text" />
+              <Breakpoint at="xs">
+                <h5>Follow me in my Youtube Channel</h5>
+              </Breakpoint>
+              <Breakpoint at="sm">
+                <h4>Follow me in my Youtube Channel</h4>
+              </Breakpoint>
+              <Breakpoint at="md">
+                <h3>Follow me in my Youtube Channel</h3>
+              </Breakpoint>
+              <Breakpoint at="lg">
+                <h1>Follow me in my Youtube Channel</h1>
+              </Breakpoint>
+              <FontAwesomeIcon icon={faYoutube} className="youtube--text" />
             </strong>
           </Link>
         </Col>
