@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useNewProject, useForm } from "../hooks";
+import { Breakpoint } from "./Breakpoint";
 
 export const NewProject = () => {
   const [show, setShow] = useState(false);
@@ -32,7 +33,14 @@ export const NewProject = () => {
   return (
     <Container>
       <Row>
-        <Button onClick={handleShow}>Add another award</Button>
+        <Breakpoint at="lg">
+          <Button onClick={handleShow}>Add another project</Button>
+        </Breakpoint>
+        <Breakpoint at="xs">
+          <Button onClick={handleShow} className="mt-5">
+            Add another project
+          </Button>
+        </Breakpoint>
       </Row>
       <Row>
         {show && (

@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useUserContext } from "../context";
 import { useNewAward, useForm } from "../hooks";
+import { Breakpoint } from "./Breakpoint";
 
 export const NewAward = () => {
   const [show, setShow] = useState(false);
@@ -33,7 +34,14 @@ export const NewAward = () => {
   return (
     <Container>
       <Row>
-        <Button onClick={handleShow}>Add another award</Button>
+        <Breakpoint at="lg">
+          <Button onClick={handleShow}>Add another award</Button>
+        </Breakpoint>
+        <Breakpoint at="xs">
+          <Button onClick={handleShow} className="mt-5">
+            Add another award
+          </Button>
+        </Breakpoint>
       </Row>
       <Row>
         {show && (
