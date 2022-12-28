@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useFetchAwards } from "../hooks";
 import Viewer from "react-viewer";
 import { useUserContext } from "../context";
+import { Breakpoint } from "../components/Breakpoint";
 
 export const Awards = () => {
   const { userDb } = useUserContext();
@@ -59,6 +60,9 @@ export const Awards = () => {
                   </div>
                   <div className="contentBx">
                     <h2> {award.title} </h2>
+                    <Breakpoint at="xs">
+                      <h2 className="mt-2">Touch for details</h2>
+                    </Breakpoint>
                     <div className="category my-2">
                       <h3 className="mt-2">Provider :</h3>
                       {award.provider === "Platzi" && <img src={platzi} className="containerCard--prov" />}

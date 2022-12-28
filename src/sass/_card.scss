@@ -1,14 +1,12 @@
-
-.containerCard{
+.containerCard {
   position: relative;
   &--prov {
-      width: 80px;
-      max-height: 40px;
+    width: 80px;
+    max-height: 40px;
   }
 }
 
-
-.containerCard .card{
+.containerCard .card {
   position: relative;
   width: 320px;
   height: 450px;
@@ -17,8 +15,8 @@
   overflow: hidden;
 }
 
-.containerCard .card:before{
-  content: '';
+.containerCard .card:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -29,22 +27,22 @@
   transition: 0.5s ease-in-out;
 }
 
-.containerCard .card:hover:before{
+.containerCard .card:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
 
-.containerCard .card:after{
-  content: 'Award';
+.containerCard .card:after {
+  content: "Award";
   position: absolute;
   top: 30%;
   left: -20%;
   font-size: 8em;
   font-weight: 800;
   font-style: italic;
-  color: rgba(255,255,25,0.05)
+  color: rgba(255, 255, 25, 0.05);
 }
 
-.containerCard .card .imgBx{
+.containerCard .card .imgBx {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -54,13 +52,12 @@
   transition: 0.5s;
 }
 
-.containerCard .card:hover .imgBx{
+.containerCard .card:hover .imgBx {
   top: 0%;
   transform: translateY(0%);
-    
 }
 
-.containerCard .card .imgBx img{
+.containerCard .card .imgBx img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -68,7 +65,7 @@
   width: 270px;
 }
 
-.containerCard .card .contentBx{
+.containerCard .card .contentBx {
   position: absolute;
   bottom: -40px;
   width: 100%;
@@ -78,11 +75,11 @@
   z-index: 10;
 }
 
-.containerCard .card:hover .contentBx{
+.containerCard .card:hover .contentBx {
   height: 230px;
 }
 
-.containerCard .card .contentBx h2{
+.containerCard .card .contentBx h2 {
   position: relative;
   font-weight: 600;
   font-size: medium;
@@ -91,30 +88,33 @@
   margin: 0;
 }
 
-.containerCard .card .contentBx .category, .containerCard .card .contentBx .color {
+.containerCard .card .contentBx .category,
+.containerCard .card .contentBx .color {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px 20px;
-  transition: 0.5s;opacity: 0;
+  transition: 0.5s;
+  opacity: 0;
   visibility: hidden;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.containerCard .card:hover .contentBx .category{
+.containerCard .card:hover .contentBx .category {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.containerCard .card:hover .contentBx .color{
+.containerCard .card:hover .contentBx .color {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.containerCard .card .contentBx .category h3, .containerCard .card .contentBx .color h3{
+.containerCard .card .contentBx .category h3,
+.containerCard .card .contentBx .color h3 {
   color: #fff;
   font-weight: 600;
   font-size: 14px;
@@ -124,9 +124,9 @@
   margin-bottom: 0px;
 }
 
-.containerCard .card .contentBx .category span{
-//   width: 26px;
-//   height: 26px;
+.containerCard .card .contentBx .category span {
+  //   width: 26px;
+  //   height: 26px;
   padding: 3px;
   text-align: center;
   line-height: 26px;
@@ -142,12 +142,12 @@
   cursor: pointer;
 }
 
-.containerCard .card .contentBx .category span:hover{
+.containerCard .card .contentBx .category span:hover {
   background: $primary;
   color: $secundary;
 }
 
-.containerCard .card .contentBx .color span{
+.containerCard .card .contentBx .color span {
   width: 20px;
   height: 20px;
   background: #ff0;
@@ -156,15 +156,15 @@
   cursor: pointer;
 }
 
-.containerCard .card .contentBx .color span:nth-child(2){
+.containerCard .card .contentBx .color span:nth-child(2) {
   background: #9bdc28;
 }
 
-.containerCard .card .contentBx .color span:nth-child(3){
+.containerCard .card .contentBx .color span:nth-child(3) {
   background: #03a9f4;
 }
 
-.containerCard .card .contentBx .color span:nth-child(4){
+.containerCard .card .contentBx .color span:nth-child(4) {
   background: #e91e63;
 }
 
@@ -183,8 +183,8 @@
 //   margin-top: 0;
 // }
 
-.containerCard .card:hover .contentBx a{
+.containerCard .card:hover .contentBx a {
   opacity: 1;
   transform: translateY(0px);
-  transition-delay: 0.75s;  
+  transition-delay: 0.75s;
 }

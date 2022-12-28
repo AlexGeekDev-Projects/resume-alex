@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useFetchProjects } from "../hooks";
 import Viewer from "react-viewer";
 import { useUserContext } from "../context";
+import { Breakpoint } from "../components/Breakpoint";
 
 export const Portfolio = () => {
   const { userDb } = useUserContext();
@@ -59,6 +60,9 @@ export const Portfolio = () => {
                   </div>
                   <div className="contentBx">
                     <h2> {project.title} </h2>
+                    <Breakpoint at="xs">
+                      <h2 className="mt-2">Touch for details</h2>
+                    </Breakpoint>
                     <div className="category my-2">
                       <h3 className="mt-2">Company :</h3>
                       {project.company === "AlexGeekDev" && <img src={logo} className="containerCard--prov" />}
