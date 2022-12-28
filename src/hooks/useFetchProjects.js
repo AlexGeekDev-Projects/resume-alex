@@ -29,18 +29,18 @@ export const useFetchProjects = () => {
   };
 
   const getNext = async () => {
-    const next = query(collection(db, "awards"), orderBy("date", "desc"), startAfter(last), limit(12));
+    const next = query(collection(db, "projects"), orderBy("date", "desc"), startAfter(last), limit(12));
     const documentSnapshots = await getDocs(next);
-    let arrayAwards = projects;
+    let arrayProjects = projects;
     if (documentSnapshots.docs.length < 12) {
       setDisable(true);
     }
 
     documentSnapshots.forEach((doc) => {
-      arrayAwards.push(doc.data());
+      arrayProjects.push(doc.data());
     });
 
-    setProjects(arrayAwards);
+    setProjects(arrayProjects);
     setLast(documentSnapshots.docs[documentSnapshots.docs.length - 1]);
   };
 
