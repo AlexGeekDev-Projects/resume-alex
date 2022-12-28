@@ -3,6 +3,7 @@ import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import logo from "../assets/logo/logo3.png";
+import { gitHubLight } from "../assets/socialMedia";
 import { useUserContext, useUiContext } from "../context";
 import useLogout from "../hooks/useLogout";
 import routes from "../routes/routes";
@@ -215,6 +216,13 @@ const Burger = () => {
               </Col>
             </Row>
           )}
+          <Row className="align-items-center mb-2">
+            <Col className=" mt-3 burgerMenu--nav">
+              <a href="https://github.com/AlexGeekDev" rel="noreferrer" target="_blank">
+                <Image src={gitHubLight} fluid width={40} />
+              </a>
+            </Col>
+          </Row>
         </Container>
       </div>
     </Fragment>

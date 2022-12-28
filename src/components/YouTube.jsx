@@ -10,12 +10,7 @@ export const YouTube = () => {
     <Container className="container-fluid youtube">
       <Row className="justify-content-center text-center">
         <Col className="col-xs-1-12 col-lg-6 mt-3 pt-5">
-          <Link
-            to={{
-              pathname: "https://www.youtube.com/channel/UCVVW0L9iP0i2ziq3Z8DrgZQ",
-            }}
-            target="_blank"
-          >
+          <a href="https://www.youtube.com/channel/UCVVW0L9iP0i2ziq3Z8DrgZQ" rel="noreferrer" target="_blank">
             <strong className="youtube--text">
               <Breakpoint at="xs">
                 <h5>Follow me in my Youtube Channel</h5>
@@ -31,7 +26,7 @@ export const YouTube = () => {
               </Breakpoint>
               <FontAwesomeIcon icon={faYoutube} size="xl" className="mt-5" />
             </strong>
-          </Link>
+          </a>
         </Col>
         <Col className="col-xs-1-12 col-lg-6">
           <img src={Alex} alt="Alex Geek" className="img-fluid youtube--photo" />

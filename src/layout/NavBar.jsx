@@ -4,6 +4,7 @@ import { useUserContext, useUiContext } from "../context";
 import useLogout from "../hooks/useLogout";
 import { Link } from "react-router-dom";
 import AlexLogo from "../assets/logo/logo1.png";
+import { gitHubLight } from "../assets/socialMedia/";
 import { ThemeChanger } from "./ThemeChanger";
 import routes from "../routes/routes";
 
@@ -24,49 +25,53 @@ export const NavBar = () => {
             <Fragment>
               <Link>
                 {userDb.photo && <Image src={userDb.photo} className="navbar--photo" width={50} height={50} />}
-                <strong> {userDb.name.split(" ", 1)} </strong>
               </Link>
             </Fragment>
           )}
         </Col>
-        <div className="col-xs-1-12 col-lg-1 text-end">
+        <Col lg={1} className="text-end">
           <Link to={routes.home}>
             <strong className="mx-2">Home</strong>
           </Link>
-        </div>
-        <div className="col-xs-1-12 col-lg-1 text-end">
+        </Col>
+        <Col lg={1} className="text-end">
           <Link to={routes.awards}>
             <strong className="mx-2">Awards</strong>
           </Link>
-        </div>
-        <div className="col-xs-1-12 col-lg-1 text-end">
+        </Col>
+        <Col lg={1} className="text-end">
           <Link to={routes.potfolio}>
             <strong className="mx-2">Portfolio</strong>
           </Link>
-        </div>
-        <div className="col-xs-1-12 col-lg-1 text-end">
+        </Col>
+        <Col lg={1} className="text-end">
           <Link to={routes.gallery}>
             <strong className="mx-2">Gallery</strong>
           </Link>
-        </div>
+        </Col>
         {!active ? (
-          <div className="col-xs-1-12 col-lg-1 text-end">
+          <Col lg={1} className="text-end">
             <Link to={routes.login}>
               <strong className="mx-2">Login</strong>
             </Link>
-          </div>
+          </Col>
         ) : (
-          <div className="col-xs-1-12 col-lg-1 text-end">
+          <Col lg={1} className="text-end">
             <Link>
               <strong className="navbar--logout" onClick={logout}>
                 Logout
               </strong>
             </Link>
-          </div>
+          </Col>
         )}
-        <div className="col-xs-1-12 col-lg-1 text-end">
+        <Col lg={1}>
+          <a href="https://github.com/AlexGeekDev" rel="noreferrer" target="_blank">
+            <Image src={gitHubLight} fluid width={40} />
+          </a>
+        </Col>
+        {/* <div className="text-end">
           <ThemeChanger />
-        </div>
+        </div> */}
       </Row>
     </Container>
   );
