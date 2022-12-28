@@ -29,7 +29,7 @@ export const YouTube = () => {
               <Breakpoint at="lg">
                 <h1>Follow me in my Youtube Channel</h1>
               </Breakpoint>
-              <FontAwesomeIcon icon={faYoutube} className="youtube--text" />
+              <FontAwesomeIcon icon={faYoutube} size="xl" className="mt-5" />
             </strong>
           </Link>
         </Col>

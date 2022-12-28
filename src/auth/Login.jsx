@@ -36,10 +36,10 @@ export const Login = () => {
   return (
     <Container>
       <Row>
-        <Col className="my-5">
+        <Col lg={6} xs={12} className="my-5">
           <Image src={logo} fluid width={700} />
         </Col>
-        <Col className="rowLogin">
+        <Col lg={6} xs={12} className="rowLogin">
           <h1 className="titleLogin">Inicia Sesión</h1>
           <Form className="justify-content-center text-center" onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -74,10 +74,10 @@ export const Login = () => {
             </Button>
           </Form>
           <Row className="justify-content-center text-center mt-5">
-            <Col>
+            <Col lg={6} xs={12}>
               <Image fluid width={250} src={google} />
             </Col>
-            <Col className="mt-4">
+            <Col lg={6} xs={12} className="my-4">
               <Button variant="secondary" onClick={handleGoogleLogin}>
                 Ingresa con Google
               </Button>

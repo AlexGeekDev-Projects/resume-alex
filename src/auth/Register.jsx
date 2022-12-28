@@ -5,6 +5,7 @@ import { useUiContext } from "../context/uiContext";
 import useForm from "../hooks/useForm";
 import useRegister from "../hooks/useRegister";
 import logo from "../assets/logo/logo3.png";
+import { Breakpoint } from "../components/Breakpoint";
 
 export const Register = () => {
   const { values, name, email, password, handleInputChange, handleAddImage } = useForm({
@@ -37,12 +38,19 @@ export const Register = () => {
   return (
     <Container fluid>
       <Row className="my-1">
-        <Col>
-          <Button className="mt-3" variant="secondary" onClick={() => navigate("/login")}>
-            Regresar
-          </Button>
+        <Col lg={6} xs={12}>
+          <Breakpoint at="lg">
+            <Button className="mt-3" variant="secondary" onClick={() => navigate("/login")}>
+              Regresar
+            </Button>
+          </Breakpoint>
+          <Breakpoint at="xs">
+            <Button className="mt-5" variant="secondary" onClick={() => navigate("/login")}>
+              Regresar
+            </Button>
+          </Breakpoint>
         </Col>
-        <Col md={{ span: 5, offset: 3 }}>
+        <Col lg={6} xs={12}>
           <p className="text-light" style={{ fontWeight: "bolder", fontSize: 40, marginBottom: 5 }}>
             Registro Perfil de usuarios
           </p>
@@ -52,10 +60,10 @@ export const Register = () => {
         <Container>
           <Form className="justify-content-center text-center" onSubmit={handleSubmit}>
             <Row>
-              <Col className="my-1">
+              <Col lg={6} xs={12} className="my-1">
                 <Image src={logo} fluid width={700} />
               </Col>
-              <Col className="px-5">
+              <Col lg={6} xs={12} className="px-5">
                 <Form.Group className="mb-1">
                   <Form.Label className="text-primary" style={{ fontWeight: "bolder" }}>
                     Nombre

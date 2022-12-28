@@ -2,18 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Ubuntu&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Pangolin&family=Ubuntu&display=swap");
-body {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  padding: 0;
-  margin: 0 auto;
-  height: 100vh;
-  background: #021626;
-  color: #08f1f3;
-  font-family: "Pangolin", cursive, sans-serif;
-  font-size: larger;
-}
 
 body.light-mode {
   background: #08f1f3;

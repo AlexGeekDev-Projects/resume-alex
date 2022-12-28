@@ -25,8 +25,8 @@ export const AboutMe = () => {
           <h2 className="text-white">
             About Me
             <FontAwesomeIcon icon={faGrav} className="hero--icons mx-2" />
-            Hi! my name is Alejandro Welsh Alvarez, I am an engineer in computer systems, I have tried to always stay at
-            the forefront of new technologies throughout my career{" "}
+            Hi! my name is Alex Welsh, I am an engineer in computer systems, I have tried to always stay at the
+            forefront of new technologies throughout my career{" "}
             <FontAwesomeIcon icon={faLaptopCode} className="hero--icons mx-2" />, through courses and certifications and
             of course putting it into practice, I like to be proactive and I consider myself self-taught definitely. I
             love this stack

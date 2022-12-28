@@ -4,13 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
 export const Footer = () => {
+  const date = new Date().getFullYear();
+
   return (
     <div className="container-fluid pt-3 footer">
       <div className="row justify-content-center text-center">
         <div className="col-xs-1-12 col-lg-6 mt-2 mb-2">
-          <h1>
-            Web Design by Alex Welsh 2021 <FontAwesomeIcon icon={faCopyright} className="mx-2" />
-          </h1>
+          <h3>
+            {`Web Design by Alex Welsh ${date}`} <FontAwesomeIcon icon={faCopyright} className="mx-2" />
+          </h3>
         </div>
         <div className="col-xs-1-12 col-lg-6">
           <Link

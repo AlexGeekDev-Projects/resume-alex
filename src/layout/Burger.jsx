@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect, useRef } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
-import logo from "../assets/logo/logoOnecolor.png";
+import logo from "../assets/logo/logo3.png";
 import { useUserContext, useUiContext } from "../context";
 import useLogout from "../hooks/useLogout";
 import routes from "../routes/routes";
@@ -84,7 +84,9 @@ const Burger = () => {
               </Row>
               <Row className="align-items-center mb-2">
                 <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav ">
-                  <span className="font-weight-light">{userDb.name.split(" ", 1)}</span>
+                  <Link to={routes.home}>
+                    <span className="font-weight-light">{userDb.name.split(" ", 1)}</span>
+                  </Link>
                 </Col>
               </Row>
             </Fragment>

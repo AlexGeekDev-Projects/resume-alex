@@ -1,30 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Pangolin&family=Ubuntu&display=swap');
-$lightBack: url('../Assets/LightBackground.png');
-$darkBack: url('../Assets/DarkBackground.png');
-
-body {
-    box-sizing: border-box;
-    overflow-x: hidden;
-    padding: 0;
-    margin: 0 auto;
-    height: 100vh;
-    background: $primary;
-    color: $secundary;
-    font-family: $variationFont2, sans-serif;
-    // font-family: 'Baloo Tammudu', sans-serif;
-    font-size: larger;
-}
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Pangolin&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oregano&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&family=Oregano&display=swap");
+$lightBack: url("../Assets/LightBackground.png");
+$darkBack: url("../Assets/DarkBackground.png");
 
 body.light-mode {
-    background: $secundary;
-    color: $primary;
+  background: $secundary;
+  color: $primary;
 }
 
 a {
-    @include link
+  @include link;
 }
 
 strong {
@@ -40,7 +29,7 @@ button {
 }
 
 a {
-  color: $secundary;  
+  color: $secundary;
 }
 
 a:hover {
@@ -59,7 +48,7 @@ a:hover {
   font-weight: bold;
   letter-spacing: 2px;
   outline: none !important;
-  text-align: center;  
+  text-align: center;
 }
 .btnWarning {
   background: $warning;
@@ -73,7 +62,7 @@ a:hover {
   font-weight: bold;
   letter-spacing: 2px;
   outline: none !important;
-  text-align: center;  
+  text-align: center;
 }
 .btnGo {
   background: $go;
@@ -87,7 +76,7 @@ a:hover {
   font-weight: bold;
   letter-spacing: 2px;
   outline: none !important;
-  text-align: center;  
+  text-align: center;
 }
 
 .btnMain {
@@ -102,7 +91,7 @@ a:hover {
   font-weight: bold;
   letter-spacing: 2px;
   outline: none !important;
-  text-align: center;  
+  text-align: center;
 }
 
 .btnPrimary {

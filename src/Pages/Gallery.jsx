@@ -21,7 +21,7 @@ export const Gallery = () => {
   const handleMoveNext = () => setIndex(nextIndex);
 
   return (
-    <Container className="p-3 mt-3">
+    <Container className="p-3 mt-5">
       <GalleryComp images={images} onClick={handleClick} enableImageSelection={false} />
       {!!currentImage && (
         <Lightbox
