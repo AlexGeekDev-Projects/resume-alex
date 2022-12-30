@@ -4,6 +4,7 @@ import { Home, Awards, Portfolio, Gallery } from "../Pages/";
 import { useUiContext } from "../context/uiContext";
 import { Layout } from "../layout/Layout";
 import routes from "./routes";
+import { AlexDev } from "../Pages/AlexDev";
 
 export const Path = () => {
   const { active } = useUiContext();
@@ -12,6 +13,7 @@ export const Path = () => {
       <Layout>
         <Routes>
           <Route exact path={routes.home} element={<Home />} />
+          <Route exact path={routes.alexdev} element={<AlexDev />} />
           <Route exact path={routes.awards} element={<Awards />} />
           <Route exact path={routes.potfolio} element={<Portfolio />} />
           <Route exact path={routes.gallery} element={<Gallery />} />

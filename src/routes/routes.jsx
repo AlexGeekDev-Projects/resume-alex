@@ -1,4 +1,5 @@
 const routes = {
+  alexdev: "/alexdev",
   awards: "/awards",
   blog: "/blog",
   gallery: "/gallery",
