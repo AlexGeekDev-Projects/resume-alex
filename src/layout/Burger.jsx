@@ -113,6 +113,26 @@ const Burger = () => {
             </Col>
           </Row>
           <Row className="align-items-center mb-2">
+            <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav ">
+              <Link to={routes.alexdev}>
+                <span
+                  onClick={() => {
+                    if (open === true) {
+                      setOpen(false);
+                      handleClickOutside(false);
+                    } else {
+                      setOpen(true);
+                    }
+                    scroll.scrollToTop({ duration: 500 });
+                  }}
+                  className="font-weight-light"
+                >
+                  Hire me!
+                </span>
+              </Link>
+            </Col>
+          </Row>
+          <Row className="align-items-center mb-2">
             <Col className="col-xs-1-12 col-lg-1 burgerMenu--nav">
               <Link to={routes.awards}>
                 <span

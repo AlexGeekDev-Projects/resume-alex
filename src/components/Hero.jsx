@@ -1,7 +1,14 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import HeroDesign2 from "../assets/hero/HeroDesign2.png";
+import routes from "../routes/routes";
+import { colors } from "../sass/Colors";
+import { animateScroll as scroll } from "react-scroll";
 
 export const Hero = () => {
+  const toTop = () => {
+    scroll.scrollToTop({ duration: 500 });
+  };
   return (
     <Container fluid className=" heroDesign">
       <Row>
@@ -31,6 +38,15 @@ export const Hero = () => {
               </div>
             </div>
           </div>
+        </Col>
+      </Row>
+      <Row className="justify-content-center text-center">
+        <Col xs={12} lg={4}>
+          <Link to={routes.alexdev}>
+            <Button className="my-5" style={{ backgroundColor: colors.light, color: colors.primary }} onClick={toTop}>
+              Do you want a custom development?
+            </Button>
+          </Link>
         </Col>
       </Row>
     </Container>

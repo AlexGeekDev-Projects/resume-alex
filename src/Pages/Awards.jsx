@@ -3,7 +3,6 @@ import { animateScroll as scroll } from "react-scroll";
 import { NewAward } from "../components";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
 import { useFetchAwards } from "../hooks";
 import Viewer from "react-viewer";
 import { useUserContext } from "../context";
